@@ -1,4 +1,9 @@
 !#/usr/bin/bash
 
-mkdir -p /etc/greetd
-cp ./config.toml /etc/greetd/
+sudo mkdir -p /etc/greetd
+sudo cp ./config.toml /etc/greetd/
+
+sudo systemctl disable sddm
+sudo rm /etc/systemd/system/display-manager.service
+sudo systemctl enable greetd.service
+# reboot
